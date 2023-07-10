@@ -1,9 +1,9 @@
 <script>
-    // Simple example, we're just setting the voltage to a static value
-    let voltage = '100W';  // You can set this to whatever value you'd like.
+    // Simple example, we're just setting the current to a static value
+    let current = '10A';  // You can set this to whatever value you'd like.
   </script>
   
-  <p>{voltage}</p>
+  <p>{current}</p>
   
   <style>
     /* Add your styles here. 
@@ -13,3 +13,4 @@
       font-size: 1.5em;
     }
   </style>
+  
