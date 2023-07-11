@@ -2,12 +2,14 @@
 	export let name;
 	import Voltage from "./Voltage.svelte";
 	import Current from "./Current.svelte";
+
+	let voltageInput = '';
+	let currentInput = '';
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-	<h2> Gui start</h2>
+	
+	<h2> Gui Control</h2>
 	<table>
 		<thead>
 			<tr>
@@ -17,8 +19,18 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td><Voltage /></td>
-				<td><Current /></td>
+				<td>
+					<Voltage />
+					<input bind:value={voltageInput} placeholder="Enter Voltage" />
+					<button on:click={() => alert(
+					`Voltage set to: ${voltageInput}`
+					)}>Set Voltage</button>
+				</td>
+				<td>
+					<Current />
+					<input bind:value={currentInput} placeholder="Enter Current" />
+					<button on:click={() => alert(`Current set to: ${currentInput}`)}>Set Current</button>
+				</td>					
 			</tr>
 		</tbody>
 	</table>
@@ -30,13 +42,6 @@
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
 	}
 
 	h2 {
@@ -54,6 +59,20 @@
 	th {
 		text-align: left;
 		padding: 0.5em;
+	}
+
+	input, button {
+		margin: 0.5em;
+	}
+
+	button {
+		background-color: #ff3e00;
+		color: white;
+		border: none;
+		padding: 0.5em 1em;
+		text-transform: uppercase;
+		font-weight: bold;
+		cursor: pointer;
 	}
 
 	@media (min-width: 640px) {
