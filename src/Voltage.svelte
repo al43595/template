@@ -1,6 +1,6 @@
 <script>
     // Simple example, we're just setting the voltage to a static value
-    let voltage = '100W';  // You can set this to whatever value you'd like.
+    let voltage = '';  // You can set this to whatever value you'd like.
   </script>
   
   <p>{voltage}</p>

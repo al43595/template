@@ -8,8 +8,10 @@
 </script>
 
 <main>
-	
-	<h2> Gui Control</h2>
+	<div class="hv-buttons">
+		<button class="hv-button hv-on">HVON</button>
+		<button class="hv-button hv-off">HV OFF</button>
+	</div>
 	<table>
 		<thead>
 			<tr>
@@ -29,11 +31,14 @@
 				<td>
 					<Current />
 					<input bind:value={currentInput} placeholder="Enter Current" />
-					<button on:click={() => alert(`Current set to: ${currentInput}`)}>Set Current</button>
+					<button on:click={() => alert(
+						`Current set to: ${currentInput}`
+						)}>Set Current</button>
 				</td>					
 			</tr>
 		</tbody>
 	</table>
+	<h2> Gui Control</h2>
 </main>
 
 <style>
@@ -56,23 +61,30 @@
 		margin-top: 1em;
 	}
 
-	th {
+	th, input, button{
 		text-align: left;
 		padding: 0.5em;
 	}
 
-	input, button {
+	
+	.hv-button {
 		margin: 0.5em;
-	}
-
-	button {
-		background-color: #ff3e00;
-		color: white;
 		border: none;
 		padding: 0.5em 1em;
 		text-transform: uppercase;
 		font-weight: bold;
 		cursor: pointer;
+		width: auto;
+	}
+
+	.hv-on {
+		background-color: red;
+		color: white;
+	}
+
+	.hv-off {
+		background-color: green;
+		color: white;
 	}
 
 	@media (min-width: 640px) {
